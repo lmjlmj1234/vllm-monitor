@@ -49,6 +49,9 @@ data/metrics/
 | `prompt_tokens` | 52 | vLLM /metrics | 累计 prompt token 数 |
 | `completion_tokens` | 100 | vLLM /metrics | 累计 generation token 数 |
 | `total_tokens` | 152 | 计算值 | prompt + completion tokens |
+| `vllm_queue_length` | 0 | vLLM /metrics | 等待处理的请求数 |
+| `vllm_running` | 1 | vLLM /metrics | 正在运行的请求数 |
+| `vllm_cache_hit_rate` | 0.95 | vLLM /metrics | KV Cache 命中率 |
 | `error_message` | N/A | 采集过程 | 异常时为错误描述 |
 
 **N/A** = 该字段当前不可用（尚未接入对应数据源）。

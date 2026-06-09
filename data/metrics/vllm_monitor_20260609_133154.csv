@@ -1,0 +1,6 @@
+timestamp,datetime_iso,gpu_index,gpu_name,gpu_temperature_c,gpu_power_w,gpu_memory_used_mb,gpu_memory_total_mb,gpu_memory_util_percent,gpu_util_percent,vllm_url,request_count,latency_ms,throughput_tokens_per_sec,vllm_queue_length,vllm_running,vllm_cache_hit_rate,prompt_tokens,completion_tokens,total_tokens,error_message
+1780983116.471916,2026-06-09T13:31:56.471916,0,NVIDIA GeForce RTX 3060,44.0,46.692,7757.12,12884.9,60.2,1,http://localhost:8000,3,158.99,N/A,0,0,0.0,140,510,650,N/A
+1780983117.487084,2026-06-09T13:31:57.487084,0,NVIDIA GeForce RTX 3060,43.0,40.396,7757.12,12884.9,60.2,2,http://localhost:8000,3,158.99,N/A,0,0,0.0,140,510,650,N/A
+1780983118.501897,2026-06-09T13:31:58.501897,0,NVIDIA GeForce RTX 3060,41.0,26.679,7757.12,12884.9,60.2,3,http://localhost:8000,3,158.99,N/A,0,0,0.0,140,510,650,N/A
+1780983119.516809,2026-06-09T13:31:59.516809,0,NVIDIA GeForce RTX 3060,40.0,20.453,7757.12,12884.9,60.2,6,http://localhost:8000,3,158.99,N/A,0,0,0.0,140,510,650,N/A
+1780983120.5309,2026-06-09T13:32:00.530900,0,NVIDIA GeForce RTX 3060,39.0,11.254,7757.12,12884.9,60.2,5,http://localhost:8000,3,158.99,N/A,0,0,0.0,140,510,650,N/A

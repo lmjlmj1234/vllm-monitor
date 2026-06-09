@@ -34,6 +34,9 @@ OUTPUT_FIELDS = [
     "request_count",
     "latency_ms",
     "throughput_tokens_per_sec",
+    "vllm_queue_length",
+    "vllm_running",
+    "vllm_cache_hit_rate",
     "prompt_tokens",
     "completion_tokens",
     "total_tokens",
@@ -141,6 +144,9 @@ class DataRecorder:
             "request_count": CSV_NULL,
             "latency_ms": CSV_NULL,
             "throughput_tokens_per_sec": CSV_NULL,
+            "vllm_queue_length": CSV_NULL,
+            "vllm_running": CSV_NULL,
+            "vllm_cache_hit_rate": CSV_NULL,
             "prompt_tokens": CSV_NULL,
             "completion_tokens": CSV_NULL,
             "total_tokens": CSV_NULL,
@@ -150,10 +156,18 @@ class DataRecorder:
 
         # 填充 vLLM 指标（非伪造，只有从 /metrics 真正获取到的才写入）
         if vllm_metrics:
-            for key in ("prompt_tokens", "completion_tokens", "total_tokens"):
+            for key in ("prompt_tokens", "completion_tokens", "total_tokens",
+                        "queue_length", "running", "cache_hit_rate"):
                 val = vllm_metrics.get(key)
                 if val is not None:
-                    row[key] = val
+                    # 映射到 CSV 列名
+                    col_map = {
+                        "queue_length": "vllm_queue_length",
+                        "running": "vllm_running",
+                        "cache_hit_rate": "vllm_cache_hit_rate",
+                    }
+                    col = col_map.get(key, key)
+                    row[col] = val
 
         # 填充采集器统计（仅 demo 模式有效，连接 vLLM 时为内存计数）
         if collector_stats:
