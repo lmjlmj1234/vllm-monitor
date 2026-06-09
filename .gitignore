@@ -40,3 +40,13 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Monitoring data files (large / session-generated)
+data/metrics/*.csv
+data/metrics/*.jsonl
+
+# Test cache
+.pytest_cache/
+
+# Streamlit secrets
+.streamlit/
